@@ -1,0 +1,66 @@
+1.@SpringBootApplication(scanBasePackages = {"com.practice.controller"})
+2.@RestController//如果每个功能返回的都是Restful内容，那么可以使用该注解，就不需要每个功能上都使用@ResponseBody
+3.//支持Rest风格 @RequestMapping("/info/{msg}")    @PathVariable把接收到的msg赋给方法
+
+
+4.日志管理：
+    SpringBoot使用的默认日志框架是Logback,并用INFO级别输出到控制台：
+    日志输出内容元素具体如下：
+            时间日期：精确到毫秒
+            日志级别：ERROR,WARN,INFO,DEBUG,TRACE
+            进程ID
+            分隔符：—— 标识实际日志的开始
+            线程名：方括号括起来（可能会截断控制台输出）
+            Logger名：通常使用源代码的类名
+            日志内容
+
+    日志依赖：该依赖内容就是Spring Boot 默认的日志框架logback
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
+
+    实际开发中我们不需要直接添加依赖。
+
+    SpringBoot的日志的级别有7个：
+    TRACE,DEBUG,INFO,WARN,ERROR,FATAL,OFF
+
+    日志级别从低到高为：
+    TRACE<DEBUG<INFO<WARN<ERROR<FATAL<OFF
+
+    如果设置为WARN，则低于WARN的信息都不会输出。
+
+    SpringBoot中默认配置ERROR、WARN和INFO级别的日志输出到控制台
+
+
+    例如
+    #root日志以WARN级别输出
+    logging.level.root=WARN(让日志只输出WARN及以上级别的信息)
+
+    #springframework.web日志以DEBUG级别输出
+    logging.level.org.springframework.web=DEBUG
+
+    #hibernate日志以ERROR级别输出
+    logging.level.org.hibernate=ERROR
+
+    默认情况下，SpringBoot将日志输出到控制台，不会写到日志文件。如果要编写除控制台输出之外的日志文件，则需在application.properties设置logging.file或logging.path属性。
+
+        logging.file，设置文件，可以是绝对路径，也可以是相对路径。如：logging.file=log/my.log(相对)或者/log/my.log(绝对)
+        logging.path，设置目录，会在该目录下创建spring.log文件，并写入日志内容，如：logging.path=/var/log
+
+    如果只配置logging.file，会在项目的当前路径下生成以一个xxx.log日志文件。
+    如果只配置logging.path，在/var/log文件夹生成一个日志文件为spring.log。
+
+    注：二者不能同时使用，如若同时使用，则只有logging.file生效
+    默认情况下，日志文件的大小达到10MB时会切分一次，产生新的日志文件，默认级别为：ERROR、WARN、INFO
+
+    #配置日志
+    logging.level.root=WARN
+    logging.level.org.springframework.web=DEBUG
+    logging.file=e:\\springboot\\info.log
+    logging.pattern.console=%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-51evel %logger- %msg%n //控制台输出日志格式
+    logging.pattern.file=%d{yyyy/MM/dd-HH:mm} [%thread] %-51evel %logger- %msg%n  //文件中输出日志格式
+
+
+

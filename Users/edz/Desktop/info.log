@@ -1,0 +1,7 @@
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.context.ContextLoader- Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2206 ms
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 5 mappings in 'requestMappingHandlerMapping'
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019/03/20-17:05 [main] %PARSER_ERROR[evel] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver- ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
